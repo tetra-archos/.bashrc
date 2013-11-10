@@ -1,0 +1,14 @@
+# Package Management
+# Changed by OS
+OS=$(cat /etc/*-release)
+case $OS in
+        Debian)
+                alias install='sudo apt-get install '
+                alias upgrade='sudo apt-get update && sudo apt-get upgrade'
+                ;;
+        CentOS)
+                alias install='sudo yum install '
+                alias upgrade='sudo yum update -y'
+                ;;
+        *)
+esac
